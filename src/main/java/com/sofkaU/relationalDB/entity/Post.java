@@ -19,6 +19,10 @@ public class Post {
 
     private String title;
 
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
     private List<Comment> comments= new ArrayList<>();
 
     public Post addComment(Comment comment){
